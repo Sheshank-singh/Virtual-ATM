@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <h2>YOU PAY</h2>
+            </div>
+            <ul class="menu">
+                <li class="active">Dashboard</li>
+                <li>Transactions</li>
+                <li>My Wallets</li>
+                <li>Activity</li>
+                <li>Analytics</li>
+                <li>Settings</li>
+                <li>Help</li>
+            </ul>
+        </div>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <header>
+                <h1>Hi Nayan!</h1>
+                <div class="user-info">
+                    <!-- <p>Hi Nayan!</p> -->
+                    <img src="images (1).jpeg" alt="User">
+                </div>
+            </header>
+
+            <!-- User Account Details -->
+            <section class="account-details">
+                <h2>Account Details</h2>
+                <p>Account Number: <span id="account-number">123456789</span></p>
+                <p>Balance: <span id="balance">$5,000</span></p>
+            </section>
+
+            <!-- Navigation Buttons -->
+            <nav class="nav-buttons">
+                <a href="./transaction.html"><button onclick="transferFunds()">Transfer Funds</button></a>
+                <button onclick="addMoney()">Add Money to Account</button>
+                <button onclick="viewHistory()">View Transaction History</button>
+                <button onclick="logout()">Log Out</button>
+            </nav>
+
+            <div class="cards">
+                <div class="card big-card">
+                    <h2>Get Pay Money</h2>
+                    <p>Instant 2% back on all your spend to your account</p>
+                    <button>Download App</button>
+                </div>
+                <div class="card small-card">
+                    <h3>Spending Limits</h3>
+                    <p>Monthly Transaction: $1,503.95 of $1,600.00</p>
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="transaction-overview">
+                <h3>Recent Transactions</h3>
+                <div class="transaction">
+                    <p>Paid to Sheshank Singh</p>
+                    <p>$135.00</p>
+                </div>
+                <div class="transaction">
+                    <p>Received from Tanisha Gupta</p>
+                    <p>$150.00</p>
+                </div>
+                <div class="transaction">
+                    <p>Paid to Shruti Dubey</p>
+                    <p>$135.00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

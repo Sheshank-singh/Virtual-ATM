@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banking Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Transfer Fund Card -->
+    <div class="card">
+      <h2><i class="fas fa-exchange-alt"></i> Transfer Funds</h2>
+      <form id="transferForm">
+        <div class="form-group">
+          <label for="accountNumber">Recipient’s Account Number:</label>
+          <input type="text" id="accountNumber" name="accountNumber" placeholder="Enter 10-digit account number" maxlength="10" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="transferAmount">Transfer Amount:</label>
+          <input type="number" id="transferAmount" name="transferAmount" placeholder="Enter amount (Min $1)" min="1" required>
+        </div>
+
+        <div class="form-group">
+          <label for="note">Note/Message:</label>
+          <textarea id="note" name="note" placeholder="Add a message (optional)"></textarea>
+        </div>
+
+        <button type="button" class="btn" onclick="transferFunds()">Transfer</button>
+
+        <div id="transferMessage"></div>
+      </form>
+    </div>
+
+    <!-- Add Money Card -->
+    <div class="card">
+      <h2><i class="fas fa-wallet"></i> Add Money to Your Account</h2>
+      <form id="addMoneyForm">
+        <div class="form-group">
+          <label for="addAmount">Amount to Add:</label>
+          <input type="number" id="addAmount" name="addAmount" placeholder="Enter amount (Min $10)" min="10" required>
+        </div>
+
+        <div class="form-group">
+          <label for="paymentMethod">Select Payment Method:</label>
+          <select id="paymentMethod" name="paymentMethod" required>
+            <option value="credit">Credit Card</option>
+            <option value="debit">Debit Card</option>
+          </select>
+        </div>
+
+        <button type="button" class="btn" onclick="addMoney()">Submit</button>
+
+        <div id="addMoneyMessage"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal for OTP Confirmation -->
+  <div id="otpModal" class="modal">
+    <div class="modal-content">
+      <h3>Enter OTP to Confirm Transaction</h3>
+      <p>An OTP has been sent to your registered mobile number.</p>
+      <input type="text" id="otpInput" placeholder="Enter OTP" maxlength="6">
+      <button class="btn" onclick="confirmOtp()">Confirm</button>
+      <button class="btn cancel-btn" onclick="closeOtpModal()">Cancel</button>
+      <div id="otpMessage"></div>
+    </div>
+  </div>
+
+  <!-- Modal for Transfer Confirmation -->
+  <div id="confirmationModal" class="modal">
+    <div class="modal-content">
+      <h3>Transfer Confirmed!</h3>
+      <p>Your transfer was successful.</p>
+      <button class="btn" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
